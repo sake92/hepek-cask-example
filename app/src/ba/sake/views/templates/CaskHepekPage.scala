@@ -1,6 +1,7 @@
 package ba.sake.views.templates
 
-import ba.sake.views.utils.Imports.Bundle._
+import scalatags.Text.all._
+import ba.sake.views.utils.Imports.Bundle._, Classes._
 
 trait CaskHepekPage extends HtmlPage {
 
@@ -15,4 +16,19 @@ trait CaskHepekPage extends HtmlPage {
 
   override def styleURLs =
     super.styleURLs :+ "styles/main.css"
+
+  override def bodyContent =
+    div(clsContainerFluid)(
+      Navbar.simple(
+        brandUrl = "/",
+        brandName = Some("Cask + Hepek"),
+        left = {
+          List(("/form", "Form"), ("/panels", "Panels")).map {
+            case (pageLink, pageTitle) =>
+              hyperlink(pageLink)(pageTitle)
+          }
+        }
+      ),
+      pageContent
+    )
 }

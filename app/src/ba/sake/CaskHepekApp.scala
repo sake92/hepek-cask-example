@@ -1,12 +1,12 @@
 package ba.sake
 
-import ba.sake.views.{Index, RegistrationForm}
+import ba.sake.views._
 import cask.main.MainRoutes
 
 object CaskHepekApp extends MainRoutes {
 
   @cask.get("/")
-  def showIndex() = Index()
+  def showIndex() = Index().contents
 
   @cask.get("/hello/:userName")
   def showHello(userName: String) = Index(userName).contents
@@ -18,6 +18,10 @@ object CaskHepekApp extends MainRoutes {
   @cask.postForm("/send-form")
   def acceptForm(username: String, email: String, age: Int) =
     RegistrationForm(username, email, age).contents
+
+  /* panel */
+  @cask.get("/panels")
+  def showPanels() = Panels().contents
 
   /* static stuff */
   @cask.staticResources("/styles")

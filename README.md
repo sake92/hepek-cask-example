@@ -1,5 +1,5 @@
 # cask-hepek
-Combine Cask with Hepek
+Simple, minimalistic web dev with Cask & Hepek! <3
 
 ## Run
 Install mill and run:  
