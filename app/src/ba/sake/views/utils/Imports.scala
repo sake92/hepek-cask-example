@@ -1,16 +1,21 @@
 package ba.sake.views.utils
 
-import ba.sake.hepek.bootstrap3.component.{BootstrapFormComponents, BootstrapGridComponents}
+// try different bundles:
+import ba.sake.hepek.bootstrap3.BootstrapBundle
+import ba.sake.hepek.bulma.BulmaBundle
+import ba.sake.hepek.w3css.W3CssBundle
 
 object Imports {
-  
-  object gridComponents extends BootstrapGridComponents
 
-  object formComponents extends BsFormComponents
-}
+  private val baseBundle = BootstrapBundle()
+  import baseBundle._
 
-// form stuff
-trait BsFormComponents extends BootstrapFormComponents {
-  import BootstrapFormComponents._
-  override def bootstrapFormType: Type = Type.Horizontal()
+  private val customGrid = Grid.withScreenRatios(
+    Grid.screenRatios
+      .withAll(Ratios().withSingle(1, 4, 1))
+      .withSm(None)
+      .withXs(None)
+  )
+
+  val Bundle = baseBundle.withGrid(customGrid)
 }
