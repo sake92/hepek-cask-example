@@ -23,7 +23,11 @@ trait CaskHepekPage extends HtmlPage {
         brandUrl = "/",
         brandName = Some("Cask + Hepek"),
         left = {
-          List(("/form", "Form"), ("/panels", "Panels")).map {
+          List(
+            ("/form", "Form"),
+            ("/panels", "Panels"),
+            ("/plant-uml", "Plant UML")
+          ).map {
             case (pageLink, pageTitle) =>
               hyperlink(pageLink)(pageTitle)
           }

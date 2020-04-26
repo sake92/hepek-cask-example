@@ -11,10 +11,10 @@ case class RegistrationForm(
 ) extends CaskHepekPage {
 
   override def pageSettings =
-    super.pageSettings
-      .withTitle("Hepek form")
+    super.pageSettings.withTitle("Hepek form")
 
   override def pageContent = row(
+    h3("Form:"),
     form(action := "send-form", method := "POST")(
       row(
         third(),

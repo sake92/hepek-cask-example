@@ -9,7 +9,8 @@ case class Panels() extends CaskHepekPage {
   override def pageSettings =
     super.pageSettings.withTitle("Hepek Panels")
 
-  override def pageContent = div(
+  override def pageContent = row(
+    h3("Panels:"),
     br,
     Panel.panel(
       panelType = Panel.Companion.Type.Primary,

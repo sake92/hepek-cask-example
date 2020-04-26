@@ -19,9 +19,12 @@ object CaskHepekApp extends MainRoutes {
   def acceptForm(username: String, email: String, age: Int) =
     RegistrationForm(username, email, age).contents
 
-  /* panel */
+  /* others */
   @cask.get("/panels")
   def showPanels() = Panels().contents
+
+  @cask.get("/plant-uml")
+  def showPlantUml() = PlantUml().contents
 
   /* static stuff */
   @cask.staticResources("/styles")

@@ -17,8 +17,6 @@ case class Index(name: String = "guest") extends CaskHepekPage {
       Howdy, **$name**!
 
       Try to go to [/hello/:yourName](/hello/yourName)
-
-      And [here](/form) is a form example.
       """.md
     )
   )
