@@ -3,6 +3,10 @@
 
 .idea/
 .idea_modules/
+
+.bloop/
+.bsp/
 .metals/
+.vscode/
 
 out/

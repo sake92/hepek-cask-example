@@ -7,14 +7,14 @@ import utest._
 object ExampleTests extends TestSuite {
 
   val tests = Tests {
-    'CaskHepekApp - test(CaskHepekApp) { host =>
+    "CaskHepekApp" - test(CaskHepekApp) { host =>
       val success = requests.get(host)
 
       assert(success.text().contains("Howdy,"))
 
       success.statusCode ==> 200
 
-      requests.get(s"$host/doesnt-exist").statusCode ==> 404
+      requests.get(s"$host/doesnt-exist", check = false).statusCode ==> 404
     }
   }
 

@@ -6,25 +6,25 @@ import cask.main.MainRoutes
 object CaskHepekApp extends MainRoutes {
 
   @cask.get("/")
-  def showIndex() = Index().contents
+  def showIndex() =  "<!DOCTYPE html>" + Index().contents
 
   @cask.get("/hello/:userName")
-  def showHello(userName: String) = Index(userName).contents
+  def showHello(userName: String) = 
+    "<!DOCTYPE html>" + Index(userName).contents
+  
 
   /* form */
   @cask.get("/form")
-  def showForm() = RegistrationForm().contents
+  def showForm() = "<!DOCTYPE html>" + RegistrationForm().contents
+  
 
   @cask.postForm("/send-form")
   def acceptForm(username: String, email: String, age: Int) =
-    RegistrationForm(username, email, age).contents
+    "<!DOCTYPE html>" + RegistrationForm(username, email, age).contents
 
   /* others */
   @cask.get("/panels")
-  def showPanels() = Panels().contents
-
-  @cask.get("/plant-uml")
-  def showPlantUml() = PlantUml().contents
+  def showPanels() = "<!DOCTYPE html>" + Panels().contents
 
   /* static stuff */
   @cask.staticResources("/styles")

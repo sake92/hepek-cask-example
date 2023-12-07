@@ -1,8 +1,7 @@
 package ba.sake.views
 
 import scalatags.Text.all.{form => _, _}
-import ba.sake.views.templates.CaskHepekPage
-import ba.sake.views.utils.Imports.Bundle._, Grid._, Form._
+import Bundle._, Grid._, Form._
 
 case class RegistrationForm(
     username: String = "",

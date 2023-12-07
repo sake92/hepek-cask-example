@@ -1,8 +1,6 @@
 package ba.sake.views
 
-import scalatags.Text.all._
-import ba.sake.views.templates.CaskHepekPage
-import ba.sake.views.utils.Imports.Bundle._, Grid._, Classes._
+import Bundle._, Tags.*, Grid._, Classes._
 
 case class Panels() extends CaskHepekPage {
 
